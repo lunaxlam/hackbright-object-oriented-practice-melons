@@ -20,10 +20,9 @@ class MelonType:
         self.name = name
 
     def __repr__(self):
-        """Returns info about melon for MelonType() objects"""
+        """Return info about melon for MelonType() objects"""
 
         return f'MelonType("{self.code}", "{self.first_harvest}", "{self.color}", "{self.is_seedless}", "{self.is_bestseller}", "{self.name})'
-
 
     def add_pairing(self, pairing):
         """Add a food pairing to the instance's pairings list."""
@@ -37,7 +36,7 @@ class MelonType:
 
 
 def make_melon_types():
-    """Returns a list of current melon types."""
+    """Return a list of current melon types."""
 
     # Initialize a list to store MelonType objects
     all_melon_types = []
@@ -66,9 +65,9 @@ def make_melon_types():
 
 
 def print_pairing_info(melon_types):
-    """Prints information about each melon type's pairings."""
+    """Print information about each melon type's pairings."""
 
-    # For each MelonType() object instance
+    # Iterate for each MelonType() object instance
     for i, melon in enumerate(melon_types):
         print(f"{melon_types[i].name} pairs with")
         for pairing in melon_types[i].pairings:
@@ -76,14 +75,24 @@ def print_pairing_info(melon_types):
         print()
 
 
-melon = make_melon_types()
-print_pairing_info(melon)
-
-
 def make_melon_type_lookup(melon_types):
-    """Takes a list of MelonTypes and returns a dictionary of melon type by code."""
+    """Take a list of MelonTypes and return a dictionary of melon type by code."""
 
-    # Fill in the rest
+    # Initialize an empty dictionary to store melon info
+    melon_lookup = {}
+
+    # Iterate for each MelonType() object instance
+    for i, melon in enumerate(melon_types):
+        # Set self.code as the key and self.name as the value
+        melon_lookup[melon_types[i].code] = melon_types[i].name
+
+    return melon_lookup
+
+
+# # Call the functions
+# melon = make_melon_types()
+# print_pairing_info(melon)
+# print(make_melon_type_lookup(melon))
 
 
 ############
